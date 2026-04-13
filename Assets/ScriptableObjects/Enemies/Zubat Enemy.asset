@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyScriptableObject
   moveSpeed: 2
   maxHealth: 10
-  damage: 0.02
+  damage: 30
   clip: {fileID: 8300000, guid: 5595cc7170c97894185ece923519f7f7, type: 3}

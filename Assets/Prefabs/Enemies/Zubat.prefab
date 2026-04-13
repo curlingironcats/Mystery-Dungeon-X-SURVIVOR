@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 769319913519216602}
   - component: {fileID: 2117585201204653044}
   - component: {fileID: -5765096640264545097}
+  - component: {fileID: -6060756230654749402}
   m_Layer: 0
   m_Name: Zubat
   m_TagString: Enemy
@@ -191,4 +192,22 @@ MonoBehaviour:
   currentMoveSpeed: 0
   currentHealth: 0
   currentDamage: 0
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  damageFlashDuration: 0.2
   deathFadeTime: 0.33
+--- !u!114 &-6060756230654749402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3730123878415526331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40acecf226e6f594daf8f184884ad273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DropRateManager
+  drops:
+  - name: Exp. Candy
+    itemPrefab: {fileID: 2542496756180436731, guid: ee7d1b5e312df27438bb7f0df81ef385, type: 3}
+    dropRate: 50

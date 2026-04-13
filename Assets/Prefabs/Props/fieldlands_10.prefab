@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 1633652285148520871}
   - component: {fileID: 1322303127729410800}
   - component: {fileID: 7810013706974832323}
+  - component: {fileID: -4006366854609348871}
+  - component: {fileID: -5040968672681583782}
   m_Layer: 0
   m_Name: fieldlands_10
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,3 +131,38 @@ CapsuleCollider2D:
   m_Offset: {x: -0.031737328, y: -0.4221785}
   m_Size: {x: 0.53780174, y: 0.6434989}
   m_Direction: 0
+--- !u!114 &-4006366854609348871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7601704948675036901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d95642a1513127468f74b4545a6675c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BreakableProps
+  health: 15
+  Clip: {fileID: 8300000, guid: 1934899d1a4859f449d98d060b364842, type: 3}
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  damageFlashDuration: 0.2
+  deathFadeTime: 0.33
+  shakeDuration: 0.3
+  shakeMagnitude: 0.1
+--- !u!114 &-5040968672681583782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7601704948675036901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40acecf226e6f594daf8f184884ad273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DropRateManager
+  drops:
+  - name: Apple Potion
+    itemPrefab: {fileID: 7718094328361108734, guid: cdbb24b9b771c4c4bac9f5342abbcdd5, type: 3}
+    dropRate: 50

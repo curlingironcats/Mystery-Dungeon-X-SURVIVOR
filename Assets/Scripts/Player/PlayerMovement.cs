@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     // Movement
-    public float moveSpeed;
     Rigidbody2D rb;
+    public CharacterScriptableObject characterData;
     public float lastHorizontalVector;
     public float lastVerticalVector;
     public Vector2 moveDir;
@@ -59,6 +59,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        rb.linearVelocity = new Vector2 (moveDir.x * moveSpeed, moveDir.y * moveSpeed);
+        rb.linearVelocity = new Vector2 (moveDir.x * characterData.MoveSpeed, moveDir.y * characterData.MoveSpeed);
     }
 }

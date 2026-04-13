@@ -555,7 +555,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: d60a84dbcd9de5a469381bc19f013e59, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -669,6 +669,8 @@ GameObject:
   - component: {fileID: 1521356217}
   - component: {fileID: 1521356218}
   - component: {fileID: 1521356219}
+  - component: {fileID: 1521356221}
+  - component: {fileID: 1521356222}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -792,7 +794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3823baf058dfb3d4780c9622177755a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 4.5
+  characterData: {fileID: 11400000, guid: ea695ad1094974641aaa62005a18bf9c, type: 2}
   lastHorizontalVector: 0
   lastVerticalVector: 0
   moveDir: {x: 0, y: 0}
@@ -868,6 +870,43 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.21623075}
   m_Size: {x: 0.79387975, y: 1.0268908}
   m_Direction: 0
+--- !u!114 &1521356221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521356212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f92c66f79bc595141a5f6a60dbb828c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
+  characterData: {fileID: 11400000, guid: ea695ad1094974641aaa62005a18bf9c, type: 2}
+  experience: 0
+  level: 1
+  experienceCap: 0
+  invincibilityDuration: 0.5
+  levelRanges:
+  - startLevel: 1
+    endLevel: 3
+    experienceCapIncrease: 100
+  - startLevel: 4
+    endLevel: 5
+    experienceCapIncrease: 200
+--- !u!114 &1521356222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521356212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c68103de2b47b64b99982bdcccefbe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCollector
+  pickupSFX: {fileID: 8300000, guid: 28d686c4f7671cc41ac5c7c233947c80, type: 3}
 --- !u!1 &1542550488
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,6 +1021,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6060756230654749402, guid: 5d06190d43c58e4409a770e6683b3f4f, type: 3}
+      propertyPath: drops.Array.data[0].dropRate
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: -5765096640264545097, guid: 5d06190d43c58e4409a770e6683b3f4f, type: 3}
       propertyPath: deathFadeTime
       value: 0.33
