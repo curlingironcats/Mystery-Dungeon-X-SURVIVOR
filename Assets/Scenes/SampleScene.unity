@@ -424,20 +424,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3432519c66cb8c40ba3b823787e6014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapController
+  referenceCamera: {fileID: 519420031}
+  checkInterval: 0.5
   terrainChunks:
-  - {fileID: 863013960854716857, guid: ce16e06d0009fa749938f22c61824470, type: 3}
-  - {fileID: 863013960854716857, guid: e16dfe6611956794886d612daf859623, type: 3}
-  - {fileID: 863013960854716857, guid: 2263f103dbbebc048b8d5045d93cb47b, type: 3}
-  player: {fileID: 1521356212}
-  checkerRadius: 0.2
+  - {fileID: 2947626512943014175, guid: ce16e06d0009fa749938f22c61824470, type: 3}
+  - {fileID: 2947626512943014175, guid: e16dfe6611956794886d612daf859623, type: 3}
+  - {fileID: 2947626512943014175, guid: 2263f103dbbebc048b8d5045d93cb47b, type: 3}
+  chunkSize: {x: 24, y: 34}
   terrainMask:
     serializedVersion: 2
     m_Bits: 64
-  currentChunk: {fileID: 0}
-  spawnedChunks: []
-  latestChunk: {fileID: 0}
-  maxOpDist: 50
-  optimizerCooldownDuration: 1
+  deleteCulledChunks: 0
 --- !u!1 &838522345
 GameObject:
   m_ObjectHideFlags: 0
