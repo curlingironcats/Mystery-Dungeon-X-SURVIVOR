@@ -13,7 +13,7 @@ public class FireSpinController : WeaponController
     protected override void Attack()
     {
         base.Attack();
-        GameObject spawnedFireSpin = Instantiate(prefab);
+        GameObject spawnedFireSpin = Instantiate(weaponData.Prefab);
 
         Vector3 offset = new Vector3(0f, -0.15f, 0f);
 

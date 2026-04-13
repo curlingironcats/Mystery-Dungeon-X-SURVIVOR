@@ -9,19 +9,15 @@ using UnityEngine;
 public class WeaponController : MonoBehaviour
 {
     [Header("Weapon Stats")]
-    public GameObject prefab;
-    public float damage;
-    public float speed;
-    public float cooldownDuration;
+    public WeaponScriptableObject weaponData;
     float currentCooldown;
-    public int pierce;
     protected PlayerMovement pm;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
     {
         pm = FindObjectOfType<PlayerMovement>();
-        currentCooldown = cooldownDuration; // at the start, set the current cooldown to be the cooldown duration
+        currentCooldown = weaponData.CooldownDuration; // at the start, set the current cooldown to be the cooldown duration
     }
 
     // Update is called once per frame
@@ -30,12 +26,13 @@ public class WeaponController : MonoBehaviour
         currentCooldown -= Time.deltaTime;
         if(currentCooldown <= 0f) // once the cooldown becomes 0, attack
         {
+            AudioSource.PlayClipAtPoint(weaponData.Clip, transform.position);
             Attack();
         }
     }
 
     protected virtual void Attack()
     {
-        currentCooldown = cooldownDuration;
+        currentCooldown = weaponData.CooldownDuration;
     }
 }

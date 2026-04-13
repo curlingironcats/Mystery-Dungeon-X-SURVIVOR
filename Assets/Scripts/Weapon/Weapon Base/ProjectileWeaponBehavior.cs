@@ -8,8 +8,23 @@ using UnityEngine;
 
 public class ProjectileWeaponBehavior : MonoBehaviour
 {
+    public WeaponScriptableObject weaponData;
     protected Vector3 direction;
     public float destroyAfterSeconds;
+
+    // Current stats
+    protected float currentDamage;
+    protected float currentSpeed;
+    protected float currentCooldownDuration;
+    protected int currentPierce;
+
+    void Awake()
+    {
+        currentDamage = weaponData.Damage;
+        currentSpeed = weaponData.Speed;
+        currentCooldownDuration = weaponData.CooldownDuration;
+        currentPierce = weaponData.Pierce;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
@@ -59,5 +74,25 @@ public class ProjectileWeaponBehavior : MonoBehaviour
 
         transform.localScale = scale;
         transform.rotation = Quaternion.Euler(rotation); // can't set vector because cannot convert
+    }
+
+    // reference the script from the collider and deal damage using TakeDamage()
+    protected virtual void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.CompareTag("Enemy"))
+        {
+            EnemyStats enemy = col.GetComponent<EnemyStats>();
+            enemy.TakeDamage(currentDamage, transform.position);  // use currentDamage instead of weapondata damage in case current values change
+            ReducePierce();
+        }
+    }
+
+    void ReducePierce() // Destroy once the pierce hits 0
+    {
+        currentPierce--;
+        if(currentPierce == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

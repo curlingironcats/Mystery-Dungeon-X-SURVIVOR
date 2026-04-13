@@ -13,7 +13,7 @@ public class FireBreathController : WeaponController
     protected override void Attack()
     {
         base.Attack();
-        GameObject spawnedFire = Instantiate(prefab);
+        GameObject spawnedFire = Instantiate(weaponData.Prefab);
         spawnedFire.transform.position = transform.position; // assign position to be the same as parent player object
         spawnedFire.GetComponent<FireBreathBehavior>().DirectionChecker(pm.lastMovedVector); // reference and set direction
     }

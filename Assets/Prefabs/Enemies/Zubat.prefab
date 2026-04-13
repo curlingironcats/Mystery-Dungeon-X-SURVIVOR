@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 7960092093505909969}
   - component: {fileID: 6758166393665321438}
   - component: {fileID: 769319913519216602}
+  - component: {fileID: 2117585201204653044}
+  - component: {fileID: -5765096640264545097}
   m_Layer: 0
   m_Name: Zubat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3730123878415526331}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.4414971, y: -1.8514636, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -81,7 +83,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -722763235
   m_SortingLayer: 3
-  m_SortingOrder: 11
+  m_SortingOrder: 12
   m_MaskInteraction: 0
   m_Sprite: {fileID: -5722812393516326530, guid: b7e438f4627724c499bbb32690978aaf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -161,3 +163,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.2075472, y: 1.2075472}
   m_EdgeRadius: 0
+--- !u!114 &2117585201204653044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3730123878415526331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d230cc94e423c1b4d853574ab4914b39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
+--- !u!114 &-5765096640264545097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3730123878415526331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b2f255ca45eda479c5cc0047a45c56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
+  enemyData: {fileID: 11400000, guid: 0b8e5faed82ea404484a381e06b71db1, type: 2}
+  currentMoveSpeed: 0
+  currentHealth: 0
+  currentDamage: 0
+  deathFadeTime: 0.33
