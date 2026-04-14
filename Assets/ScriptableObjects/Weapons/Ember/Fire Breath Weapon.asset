@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57cee1edda760464086170211f0f325b, type: 3}
-  m_Name: Fire Spin Weapon
+  m_Name: Fire Breath Weapon
   m_EditorClassIdentifier: Assembly-CSharp::WeaponScriptableObject
-  prefab: {fileID: 5871873230873329940, guid: c2f36fb7c010ae94697f0457df9b6fb2, type: 3}
+  prefab: {fileID: 6281084214156586947, guid: b172f5f0305638f4fbabaabbbb305559, type: 3}
   damage: 5
-  speed: 0
-  cooldownDuration: 3
+  speed: 10
+  cooldownDuration: 2
   currentCooldown: 0
-  pierce: 0
+  pierce: 1
   clip: {fileID: 8300000, guid: 44ced3071bc75e349b3f30704e145dc6, type: 3}
+  level: 1
+  nextLevelPrefab: {fileID: 3101298889606502534, guid: c4aa96409c82b154d8a45237ac59b1a5, type: 3}
+  icon: {fileID: 3120616980442762790, guid: 49cfaa857e04ef24fa03e20a02174eca, type: 3}

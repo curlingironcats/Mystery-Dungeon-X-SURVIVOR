@@ -9,6 +9,7 @@ public class ExperienceCandy : Pickup, ICollectible
 
     public void Collect()
     {
+        hasBeenCollected = true;
         PlayerStats player = FindObjectOfType<PlayerStats>();
         player.IncreaseExperience(experienceGranted);
     }

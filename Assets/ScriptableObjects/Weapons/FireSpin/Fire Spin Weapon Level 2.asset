@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57cee1edda760464086170211f0f325b, type: 3}
+  m_Name: Fire Spin Weapon Level 2
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponScriptableObject
+  prefab: {fileID: 5871873230873329940, guid: c2f36fb7c010ae94697f0457df9b6fb2, type: 3}
+  damage: 5
+  speed: 0
+  cooldownDuration: 2.5
+  currentCooldown: 0
+  pierce: 0
+  clip: {fileID: 8300000, guid: 44ced3071bc75e349b3f30704e145dc6, type: 3}
+  level: 2
+  nextLevelPrefab: {fileID: 0}
+  icon: {fileID: -5189648687094596749, guid: 953ca33341e4fc44c8c561df299ab9dc, type: 3}

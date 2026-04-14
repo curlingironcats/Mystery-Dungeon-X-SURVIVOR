@@ -18,7 +18,7 @@ public class FireSpinBehavior : MeleeWeaponBehavior
         if(col.CompareTag("Enemy") && !markedEnemies.Contains(col.gameObject))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(currentDamage, transform.position);
+            enemy.TakeDamage(GetCurrentDamage(), transform.position);
 
             markedEnemies.Add(col.gameObject);
         }
@@ -26,7 +26,7 @@ public class FireSpinBehavior : MeleeWeaponBehavior
         {
             if(col.gameObject.TryGetComponent(out BreakableProps breakable) && !markedEnemies.Contains(col.gameObject))
             {
-                breakable.TakeDamage(currentDamage);
+                breakable.TakeDamage(GetCurrentDamage());
 
                 markedEnemies.Add(col.gameObject);
             }

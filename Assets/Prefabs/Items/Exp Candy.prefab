@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5240306197139966900}
   - component: {fileID: -1490284414175217241}
   - component: {fileID: -3562042664632246346}
+  - component: {fileID: -3406509410951850249}
   m_Layer: 0
   m_Name: Exp Candy
   m_TagString: Untagged
@@ -163,8 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0369a96db9d808c4db2926618424b183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExperienceCandy
-  experienceGranted: 100
   pickupSFX: {fileID: 8300000, guid: 28d686c4f7671cc41ac5c7c233947c80, type: 3}
+  experienceGranted: 100
 --- !u!50 &-3562042664632246346
 Rigidbody2D:
   serializedVersion: 5
@@ -192,3 +193,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-3406509410951850249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2542496756180436731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed23ea072bce9e4b9ec9671802ab88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BobbingAnimation
+  frequency: 3
+  magnitude: 0.2
+  direction: {x: 0, y: 1, z: 0}

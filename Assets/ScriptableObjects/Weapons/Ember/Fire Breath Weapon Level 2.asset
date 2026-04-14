@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57cee1edda760464086170211f0f325b, type: 3}
-  m_Name: Fire Breath Weapon
+  m_Name: Fire Breath Weapon Level 2
   m_EditorClassIdentifier: Assembly-CSharp::WeaponScriptableObject
   prefab: {fileID: 6281084214156586947, guid: b172f5f0305638f4fbabaabbbb305559, type: 3}
   damage: 5
-  speed: 10
+  speed: 15
   cooldownDuration: 2
   currentCooldown: 0
   pierce: 1
   clip: {fileID: 8300000, guid: 44ced3071bc75e349b3f30704e145dc6, type: 3}
+  level: 2
+  nextLevelPrefab: {fileID: 0}
+  icon: {fileID: -3523294247147982125, guid: 49cfaa857e04ef24fa03e20a02174eca, type: 3}

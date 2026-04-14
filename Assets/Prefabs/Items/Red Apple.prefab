@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -571864024547914124}
   - component: {fileID: -5170437925274083937}
   - component: {fileID: 3630604211217969954}
+  - component: {fileID: 3044877036347120821}
   m_Layer: 0
   m_Name: Red Apple
   m_TagString: Untagged
@@ -106,8 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df4891a16e7b4c429a4b6f64656d88d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ApplePotion
-  healthToRestore: 100
   pickupSFX: {fileID: 8300000, guid: 28d686c4f7671cc41ac5c7c233947c80, type: 3}
+  healthToRestore: 100
 --- !u!58 &-5170437925274083937
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -171,3 +172,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3044877036347120821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7718094328361108734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed23ea072bce9e4b9ec9671802ab88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BobbingAnimation
+  frequency: 3
+  magnitude: 0.2
+  direction: {x: 0, y: 1, z: 0}

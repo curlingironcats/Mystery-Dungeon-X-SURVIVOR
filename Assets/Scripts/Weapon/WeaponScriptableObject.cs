@@ -27,5 +27,15 @@ public class WeaponScriptableObject : ScriptableObject
     [SerializeField]
     AudioClip clip;
     public AudioClip Clip {get=> clip; private set => clip = value;}
+    [SerializeField]
+    int level; // not meant to be modified in game, only in editor
+    public int Level {get=> level; private set => level = value;}
+    [SerializeField]
+    GameObject nextLevelPrefab; // the prefab of the next level i.e what the object becomes when it levels up
+                                // not to be confused with the prefab spawned at next level
+    public GameObject NextLevelPrefab {get=> nextLevelPrefab; private set => nextLevelPrefab = value;}
+    [SerializeField]
+    Sprite icon;
+    public Sprite Icon {get=>icon; private set=>icon = value;}
 
 }
