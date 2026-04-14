@@ -13,6 +13,10 @@ public class EnemyStats : MonoBehaviour
     public float currentHealth;
     [HideInInspector]
     public float currentDamage;
+    
+    public float despawnDistance = 20f;
+    Transform player;
+
     [Header("Damage Feedback")]
     public Color damageColor = new Color(1, 0, 0, 1); // color of damage flash 
     public float damageFlashDuration = 0.2f; // how long the flash lasts
@@ -30,9 +34,18 @@ public class EnemyStats : MonoBehaviour
 
     void Start()
     {
+        player = FindObjectOfType<PlayerStats>().transform;
         movement = GetComponent<EnemyMovement>();
         sr = GetComponent<SpriteRenderer>();
         originalColor = sr.color;
+    }
+
+    void Update()
+    {
+        if(Vector2.Distance(transform.position, player.position) >= despawnDistance)
+        {
+            ReturnEnemy();
+        }
     }
 
     public void TakeDamage(float damage, Vector2 sourcePosition, float knockbackForce = 5f, float knockbackDuration = 0.2f)
@@ -96,5 +109,17 @@ public class EnemyStats : MonoBehaviour
             PlayerStats player = col.gameObject.GetComponent<PlayerStats>();
             player.TakeDamage(currentDamage); // use current damage instead of weapondamage in case multipliers change
         }
+    }
+
+    private void OnDestroy()
+    {
+        EnemySpawner es = FindObjectOfType<EnemySpawner>();
+        es.OnEnemyKilled();
+    }
+
+    void ReturnEnemy()
+    {
+        EnemySpawner es = FindObjectOfType<EnemySpawner>();
+        transform.position = player.position + es.relativeSpawnPoints[Random.Range(0, es.relativeSpawnPoints.Count)].position;
     }
 }
