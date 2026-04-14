@@ -15,4 +15,6 @@ MonoBehaviour:
   multiplier: 150
   level: 2
   nextLevelPrefab: {fileID: 0}
+  name: Choice Band+
+  description: Increases Attack by 150%.
   icon: {fileID: 170177089, guid: 6cb16e9ad44a7c84bae54174b562d088, type: 3}

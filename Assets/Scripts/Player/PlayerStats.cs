@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -47,6 +48,11 @@ public class PlayerStats : MonoBehaviour
     public int weaponIndex;
     public int passiveItemIndex;
 
+    [Header("UI")]
+    public Image healthBar;
+    public Image expBar;
+    public Text levelText;
+
     public GameObject firstPassiveItemTest, secondPassiveItemTest;
 
     void Awake()
@@ -66,7 +72,7 @@ public class PlayerStats : MonoBehaviour
 
         // spawn the starting weapon
         SpawnWeapon(characterData.StartingWeapon);
-        SpawnPassiveItem(firstPassiveItemTest);
+        //SpawnPassiveItem(firstPassiveItemTest);
         SpawnPassiveItem(secondPassiveItemTest);
     }
 
@@ -74,6 +80,10 @@ public class PlayerStats : MonoBehaviour
     {
         // initialize the experience cap as the first experience increase
         experienceCap = levelRanges[0].experienceCapIncrease;
+
+        UpdateHealthBar();
+        UpdateExpBar();
+        UpdateLevelText();
     }
 
     void Update()
@@ -96,6 +106,8 @@ public class PlayerStats : MonoBehaviour
         experience += amount;
 
         LevelUpChecker();
+
+        UpdateExpBar();
     }
 
     void LevelUpChecker()
@@ -115,7 +127,21 @@ public class PlayerStats : MonoBehaviour
                 }
             }
             experienceCap += experienceCapIncrease;
+
+            UpdateLevelText();
+
+            GameManager.instance.StartLevelUp();
         }
+    }
+
+    void UpdateExpBar()
+    {
+        expBar.fillAmount = (float)experience / experienceCap;
+    }
+
+    void UpdateLevelText()
+    {
+        levelText.text = "LV. " + level.ToString();
     }
 
     public void TakeDamage(float damage)
@@ -132,8 +158,15 @@ public class PlayerStats : MonoBehaviour
             {
                 Kill();
             }
-            
+
+            UpdateHealthBar();
         }
+    }
+
+    void UpdateHealthBar()
+    {
+        // update the health bar
+        healthBar.fillAmount = currentHealth / characterData.MaxHealth;
     }
 
     public void Kill()
@@ -155,6 +188,8 @@ public class PlayerStats : MonoBehaviour
             {
                 currentHealth = characterData.MaxHealth;
             }
+
+            UpdateHealthBar();
         }
     }
 
@@ -170,6 +205,8 @@ public class PlayerStats : MonoBehaviour
                 currentHealth = characterData.MaxHealth;
             }
         }
+
+        UpdateHealthBar();
     }
 
     public void SpawnWeapon(GameObject weapon)

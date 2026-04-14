@@ -21,4 +21,7 @@ MonoBehaviour:
   clip: {fileID: 8300000, guid: 44ced3071bc75e349b3f30704e145dc6, type: 3}
   level: 1
   nextLevelPrefab: {fileID: 6478674682751535378, guid: 90aec46dc52f9534c8b1842b7b4a4222, type: 3}
+  name: Fire Spin
+  description: Creates a vortex of fire around the user, dealing contact damage to
+    enemies.
   icon: {fileID: 1724375563, guid: 6cb16e9ad44a7c84bae54174b562d088, type: 3}

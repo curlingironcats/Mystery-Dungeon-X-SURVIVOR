@@ -164,8 +164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0369a96db9d808c4db2926618424b183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExperienceCandy
+  hasBeenCollected: 0
   pickupSFX: {fileID: 8300000, guid: 28d686c4f7671cc41ac5c7c233947c80, type: 3}
-  experienceGranted: 100
+  experienceGranted: 30
 --- !u!50 &-3562042664632246346
 Rigidbody2D:
   serializedVersion: 5

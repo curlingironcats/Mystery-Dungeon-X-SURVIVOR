@@ -15,4 +15,6 @@ MonoBehaviour:
   multiplier: 40
   level: 2
   nextLevelPrefab: {fileID: 0}
+  name: Speed Wing+
+  description: Increases Speed by 40%.
   icon: {fileID: -1922135497, guid: 6cb16e9ad44a7c84bae54174b562d088, type: 3}

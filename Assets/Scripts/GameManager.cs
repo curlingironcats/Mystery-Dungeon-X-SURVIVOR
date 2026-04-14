@@ -34,6 +34,12 @@ public class GameManager : MonoBehaviour
     // flag to check if game is over
     public bool isGameOver = false;
 
+    // flag to check if player is choosing upgraddes
+    public bool choosingUpgrade = false;
+
+    // reference to the player's game object
+    public GameObject playerObject;
+
     void Awake()
     {
         if(instance == null)
@@ -79,6 +85,16 @@ public class GameManager : MonoBehaviour
                     }
                 }
                 break; 
+
+                case GameState.LevelUp:
+                    if(!choosingUpgrade)
+                    {
+                        choosingUpgrade = true;
+                        Time.timeScale = 0f; // pause the game for now
+                        Debug.Log("Upgrade Screen");
+                        levelUpScreen.SetActive(true);
+                    }
+                break;
             
             default:
                 Debug.LogWarning("STATE DOES NOT EXIST");
@@ -148,6 +164,7 @@ public class GameManager : MonoBehaviour
     {
         pauseScreen.SetActive(false);
         resultsScreen.SetActive(false);
+        levelUpScreen.SetActive(false);
     }
 
     public void GameOver()
@@ -179,5 +196,19 @@ public class GameManager : MonoBehaviour
 
         // update the stopwatch to display the elapsed time
         stopwatchDisplay.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void StartLevelUp()
+    {
+        ChangeState(GameState.LevelUp);
+        playerObject.SendMessage("RemoveAndApplyUpgrades");
+    }
+
+    public void EndLevelUp()
+    {
+        choosingUpgrade = false;
+        Time.timeScale = 1f; // resume the game
+        levelUpScreen.SetActive(false);
+        ChangeState(GameState.GamePlay);
     }
 }

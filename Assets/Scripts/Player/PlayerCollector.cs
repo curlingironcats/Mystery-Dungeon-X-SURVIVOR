@@ -8,6 +8,9 @@ public class PlayerCollector : MonoBehaviour
     CircleCollider2D playerCollector;
     public float pullSpeed;
 
+    // Track all pickups currently inside the magnet radius
+    private List<Transform> attractedObjects = new List<Transform>();
+
     void Start()
     {
         player = FindObjectOfType<PlayerStats>();
@@ -17,23 +20,57 @@ public class PlayerCollector : MonoBehaviour
     void Update()
     {
         playerCollector.radius = player.currentMagnet;
+
+        // Move all attracted objects toward the player
+        for (int i = attractedObjects.Count - 1; i >= 0; i--)
+        {
+            Transform obj = attractedObjects[i];
+
+            if (obj == null)
+            {
+                attractedObjects.RemoveAt(i);
+                continue;
+            }
+
+            // Move toward player
+            obj.position = Vector2.MoveTowards(
+                obj.position,
+                transform.position,
+                pullSpeed * Time.deltaTime
+            );
+
+            // Optional: collect when very close
+            if (Vector2.Distance(obj.position, transform.position) < 0.2f)
+            {
+                if (obj.TryGetComponent(out ICollectible collectible))
+                {
+                    collectible.Collect();
+                }
+
+                Destroy(obj.gameObject);
+                attractedObjects.RemoveAt(i);
+            }
+        }
     }
-    
+
     void OnTriggerEnter2D(Collider2D col)
     {
-        // check if game object has the ICollectible interface
-        if(col.gameObject.TryGetComponent(out ICollectible collectible))
+        if (col.TryGetComponent(out ICollectible collectible))
         {
-            //Pulling animation
-            //Gets the RigidBody2D component on the item
-            Rigidbody2D rb = col.gameObject.GetComponent<Rigidbody2D>();
-            //Vector2 pointing from the item to player
-            Vector2 forceDirection = (transform.position - col.transform.position).normalized;
-            //Applies force to item in forcedirection with pullspeed
-            rb.AddForce(forceDirection * pullSpeed);
+            // Add to list instead of applying force once
+            if (!attractedObjects.Contains(col.transform))
+            {
+                attractedObjects.Add(col.transform);
+            }
+        }
+    }
 
-            // if it does, call the collect method
-            collectible.Collect();
+    void OnTriggerExit2D(Collider2D col)
+    {
+        // Stop pulling if it leaves the radius
+        if (attractedObjects.Contains(col.transform))
+        {
+            attractedObjects.Remove(col.transform);
         }
     }
 }

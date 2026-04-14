@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57cee1edda760464086170211f0f325b, type: 3}
   m_Name: Fire Breath Weapon Level 2
   m_EditorClassIdentifier: Assembly-CSharp::WeaponScriptableObject
-  prefab: {fileID: 6281084214156586947, guid: b172f5f0305638f4fbabaabbbb305559, type: 3}
+  prefab: {fileID: 6281084214156586947, guid: a3b1ff61feea0544fba489f63f79b723, type: 3}
   damage: 5
   speed: 15
   cooldownDuration: 2
@@ -20,5 +20,7 @@ MonoBehaviour:
   pierce: 1
   clip: {fileID: 8300000, guid: 44ced3071bc75e349b3f30704e145dc6, type: 3}
   level: 2
-  nextLevelPrefab: {fileID: 0}
+  nextLevelPrefab: {fileID: 3101298889606502534, guid: de2d2007bc73c6442b4886e51a16e690, type: 3}
+  name: Ember+
+  description: Increases projectile speed by 5.
   icon: {fileID: 1867182813, guid: 6cb16e9ad44a7c84bae54174b562d088, type: 3}

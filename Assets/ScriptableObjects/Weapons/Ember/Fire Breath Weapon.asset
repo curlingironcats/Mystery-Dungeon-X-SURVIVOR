@@ -21,4 +21,6 @@ MonoBehaviour:
   clip: {fileID: 8300000, guid: 44ced3071bc75e349b3f30704e145dc6, type: 3}
   level: 1
   nextLevelPrefab: {fileID: 3101298889606502534, guid: c4aa96409c82b154d8a45237ac59b1a5, type: 3}
+  name: Ember
+  description: Launches a bolt of flame in the direction the player is facing.
   icon: {fileID: 1867182813, guid: 6cb16e9ad44a7c84bae54174b562d088, type: 3}
