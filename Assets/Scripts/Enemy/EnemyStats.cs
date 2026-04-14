@@ -7,8 +7,11 @@ public class EnemyStats : MonoBehaviour
     public EnemyScriptableObject enemyData;
 
     // current enemy stats
+    [HideInInspector]
     public float currentMoveSpeed;
+    [HideInInspector]
     public float currentHealth;
+    [HideInInspector]
     public float currentDamage;
     [Header("Damage Feedback")]
     public Color damageColor = new Color(1, 0, 0, 1); // color of damage flash 

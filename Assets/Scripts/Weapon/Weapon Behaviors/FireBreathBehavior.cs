@@ -15,6 +15,6 @@ public class FireBreathBehavior : ProjectileWeaponBehavior
     // Update is called once per frame
     void Update()
     {
-        transform.position += direction * weaponData.Speed * Time.deltaTime; // set the movement of the breath
+        transform.position += direction * currentSpeed * Time.deltaTime; // set the movement of the breath
     }
 }
