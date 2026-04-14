@@ -21,4 +21,4 @@ MonoBehaviour:
   clip: {fileID: 8300000, guid: 44ced3071bc75e349b3f30704e145dc6, type: 3}
   level: 1
   nextLevelPrefab: {fileID: 6478674682751535378, guid: 90aec46dc52f9534c8b1842b7b4a4222, type: 3}
-  icon: {fileID: 3978756608754999521, guid: 953ca33341e4fc44c8c561df299ab9dc, type: 3}
+  icon: {fileID: 1724375563, guid: 6cb16e9ad44a7c84bae54174b562d088, type: 3}
