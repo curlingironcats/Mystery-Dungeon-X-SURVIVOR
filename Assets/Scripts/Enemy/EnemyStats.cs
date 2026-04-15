@@ -107,7 +107,7 @@ public class EnemyStats : MonoBehaviour
         if(col.gameObject.CompareTag("Player"))
         {
             PlayerStats player = col.gameObject.GetComponent<PlayerStats>();
-            player.TakeDamage(currentDamage); // use current damage instead of weapondamage in case multipliers change
+            player.TakeDamage(currentDamage, transform.position); // use current damage instead of weapondamage in case multipliers change
         }
     }
 

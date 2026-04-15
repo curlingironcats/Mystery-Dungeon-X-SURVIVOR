@@ -17,7 +17,7 @@ MonoBehaviour:
   speed: 10
   cooldownDuration: 2
   currentCooldown: 0
-  pierce: 1
+  pierce: 3
   clip: {fileID: 8300000, guid: 44ced3071bc75e349b3f30704e145dc6, type: 3}
   level: 1
   nextLevelPrefab: {fileID: 3101298889606502534, guid: c4aa96409c82b154d8a45237ac59b1a5, type: 3}

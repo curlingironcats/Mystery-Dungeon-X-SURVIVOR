@@ -86,8 +86,8 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 12
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -5722812393516326530, guid: b7e438f4627724c499bbb32690978aaf, type: 3}
-  m_Color: {r: 0.93207544, g: 0.12486295, b: 0.22361836, a: 1}
+  m_Sprite: {fileID: 817846575070599675, guid: 9a8f7bbc28bb3bb4aa418e431fc76d0d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -106,7 +106,7 @@ Animator:
   m_GameObject: {fileID: 3730123878415526331}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 720b94a51e61f0447b38d6bc1550fb75, type: 2}
+  m_Controller: {fileID: 9100000, guid: ce055a9c40978b942829be201185946f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -156,7 +156,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.2075472, y: 1.2075472}
+    oldSize: {x: 1.8490566, y: 1.4339622}
     newSize: {x: 1.2075472, y: 1.2075472}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -188,10 +188,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b2f255ca45eda479c5cc0047a45c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
-  enemyData: {fileID: 11400000, guid: 0b8e5faed82ea404484a381e06b71db1, type: 2}
+  enemyData: {fileID: 11400000, guid: 4bd269b68e78b2345ba15673a26d4ae9, type: 2}
   currentMoveSpeed: 0
   currentHealth: 0
   currentDamage: 0
+  despawnDistance: 20
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
   deathFadeTime: 0.33
@@ -210,4 +211,4 @@ MonoBehaviour:
   drops:
   - name: Exp. Candy
     itemPrefab: {fileID: 2542496756180436731, guid: ee7d1b5e312df27438bb7f0df81ef385, type: 3}
-    dropRate: 50
+    dropRate: 75

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Totodile
   m_EditorClassIdentifier: Assembly-CSharp::CharacterScriptableObject
   startingWeapon: {fileID: 6478674682751535378, guid: 4c487c5bc01e1894cb1c402aeed065d4, type: 3}
-  maxHealth: 200
+  maxHealth: 100
   recovery: 0
   moveSpeed: 4
   might: 1

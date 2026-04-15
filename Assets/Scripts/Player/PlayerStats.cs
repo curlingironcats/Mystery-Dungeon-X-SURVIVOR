@@ -42,9 +42,19 @@ public class PlayerStats : MonoBehaviour
     float invincibilityTimer;
     bool isInvincible;
 
+    [Header("Knockback")]
+    public float knockbackForce = 8f;
+    private Rigidbody2D rb;
+
     public List<LevelRange> levelRanges;
 
+    PlayerCollector collector;
+
+    PlayerMovement movement;
+
     InventoryManager inventory;
+    Color originalColor;
+    SpriteRenderer sr;
     public int weaponIndex;
     public int passiveItemIndex;
 
@@ -52,15 +62,27 @@ public class PlayerStats : MonoBehaviour
     public Image healthBar;
     public Image expBar;
     public Text levelText;
+    public AudioClip Clip;
 
     public GameObject firstPassiveItemTest, secondPassiveItemTest;
 
+    [Header("Damage Feedback")]
+    public Color damageColor = new Color(1, 0, 0, 1); // color of damage flash 
+    public float damageFlashDuration = 0.2f; // how long the flash lasts
+
     void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
+        movement = GetComponent<PlayerMovement>();
+
+        sr = GetComponent<SpriteRenderer>();
+        originalColor = sr.color;
+
         characterData = CharacterSelector.GetData();
         CharacterSelector.instance.DestroySingleton();
 
         inventory = GetComponent<InventoryManager>();
+        collector = GetComponentInChildren<PlayerCollector>();
 
         // assign the variables
         currentHealth = characterData.MaxHealth;
@@ -69,11 +91,12 @@ public class PlayerStats : MonoBehaviour
         currentMight = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
         currentMagnet = characterData.Magnet;
+        collector.SetRadius(characterData.Magnet);
 
         // spawn the starting weapon
         SpawnWeapon(characterData.StartingWeapon);
         //SpawnPassiveItem(firstPassiveItemTest);
-        SpawnPassiveItem(secondPassiveItemTest);
+        //SpawnPassiveItem(secondPassiveItemTest);
     }
 
     void Start()
@@ -144,15 +167,18 @@ public class PlayerStats : MonoBehaviour
         levelText.text = "LV. " + level.ToString();
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, Vector2 sourcePosition)
     {
-        // if player is not currently invincible, reduce health and start invincibility
         if(!isInvincible)
         {
+            AudioSource.PlayClipAtPoint(Clip, transform.position);
             currentHealth -= damage;
+            StartCoroutine(DamageFlash());
 
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
+
+            movement.ApplyKnockback(sourcePosition, knockbackForce);
 
             if(currentHealth <= 0)
             {
@@ -161,6 +187,14 @@ public class PlayerStats : MonoBehaviour
 
             UpdateHealthBar();
         }
+    }
+
+    // coroutine that makes the player flash when taking damage
+    IEnumerator DamageFlash()
+    {
+        sr.color = damageColor;
+        yield return new WaitForSeconds(damageFlashDuration);
+        sr.color = originalColor;
     }
 
     void UpdateHealthBar()

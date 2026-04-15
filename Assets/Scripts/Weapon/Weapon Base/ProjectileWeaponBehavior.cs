@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-///  Base script for all projectile weapon behavior (place on prefab on a projectile weapon)
+/// Base script for all projectile weapon behavior
 /// </summary>
-
 public class ProjectileWeaponBehavior : MonoBehaviour
 {
     public WeaponScriptableObject weaponData;
@@ -28,71 +27,76 @@ public class ProjectileWeaponBehavior : MonoBehaviour
 
     public float GetCurrentDamage()
     {
-        return currentDamage *= FindObjectOfType<PlayerStats>().currentMight;
+        return currentDamage * FindObjectOfType<PlayerStats>().currentMight;
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
     {
+        SetDirectionToNearestEnemy();
         Destroy(gameObject, destroyAfterSeconds);
     }
 
-    public void DirectionChecker(Vector3 dir)
+    public void SetDirectionToNearestEnemy()
     {
-        direction = dir;
+        GameObject target = FindNearestEnemy();
 
-        float dirx = direction.x;
-        float diry = direction.y;
-
-        Vector3 scale = transform.localScale;
-        Vector3 rotation = transform.rotation.eulerAngles;
-
-        if(dirx < 0 && diry == 0)
+        if (target != null)
         {
-            scale.x *= -1;
-            scale.y *= -1;
+            direction = (target.transform.position - transform.position).normalized;
+            RotateToDirection(direction);
         }
-        else if (dirx == 0 && diry < 0) // down
+        else
         {
-            rotation.z = 0f;
+            // fallback if there are no enemies
+            direction = Vector3.right;
+            RotateToDirection(direction);
         }
-        else if (dirx == 0 && diry > 0) // up
-        {
-            rotation.z = 180f;
-        }
-        else if (dir.x > 0 && dir.y > 0) // right up
-        {
-            rotation.z = 135f;
-        }
-        else if (dir.x > 0 && dir.y < 0) // right down
-        {
-            rotation.z = 35f;
-        }
-        else if (dir.x < 0 && dir.y > 0) // left up
-        {
-            rotation.z = -135f;
-        }
-        else if (dir.x < 0 && dir.y < 0) // left down
-        {
-            rotation.z = -35f;            
-        }
-
-        transform.localScale = scale;
-        transform.rotation = Quaternion.Euler(rotation); // can't set vector because cannot convert
     }
 
-    // reference the script from the collider and deal damage using TakeDamage()
+    GameObject FindNearestEnemy()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        GameObject closestEnemy = null;
+        float closestDistanceSqr = Mathf.Infinity;
+        Vector3 currentPosition = transform.position;
+
+        foreach (GameObject enemy in enemies)
+        {
+            float distanceSqr = (enemy.transform.position - currentPosition).sqrMagnitude;
+
+            if (distanceSqr < closestDistanceSqr)
+            {
+                closestDistanceSqr = distanceSqr;
+                closestEnemy = enemy;
+            }
+        }
+
+        return closestEnemy;
+    }
+
+    void RotateToDirection(Vector3 dir)
+    {
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle + 90f);
+    }
+
+    protected virtual void Update()
+    {
+        transform.position += direction * currentSpeed * Time.deltaTime;
+    }
+
     protected virtual void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.CompareTag("Enemy"))
+        if (col.CompareTag("Enemy"))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(GetCurrentDamage(), transform.position);  // use currentDamage instead of weapondata damage in case current values change
+            enemy.TakeDamage(GetCurrentDamage(), transform.position);
             ReducePierce();
         }
         else if (col.CompareTag("Prop"))
         {
-            if(col.gameObject.TryGetComponent(out BreakableProps breakable))
+            if (col.gameObject.TryGetComponent(out BreakableProps breakable))
             {
                 breakable.TakeDamage(GetCurrentDamage());
                 ReducePierce();
@@ -100,10 +104,10 @@ public class ProjectileWeaponBehavior : MonoBehaviour
         }
     }
 
-    void ReducePierce() // Destroy once the pierce hits 0
+    void ReducePierce()
     {
         currentPierce--;
-        if(currentPierce == 0)
+        if (currentPierce == 0)
         {
             Destroy(gameObject);
         }

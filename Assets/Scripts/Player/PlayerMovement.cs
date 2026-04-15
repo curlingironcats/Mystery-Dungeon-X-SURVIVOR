@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 moveDir;
     [HideInInspector]
     public Vector2 lastMovedVector;
+    public float knockbackDuration = 0.15f;
+    private float knockbackTimer;
 
     //References
     Rigidbody2D rb;
@@ -35,6 +37,12 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (knockbackTimer > 0)
+        {
+            knockbackTimer -= Time.fixedDeltaTime;
+            return;
+        }
+
         Move();
     }
 
@@ -76,5 +84,12 @@ public class PlayerMovement : MonoBehaviour
         }
         
         rb.linearVelocity = new Vector2(moveDir.x * player.currentMoveSpeed, moveDir.y * player.currentMoveSpeed);
+    }
+
+    public void ApplyKnockback(Vector2 sourcePosition, float force)
+    {
+        Vector2 direction = ((Vector2)transform.position - sourcePosition).normalized;
+        rb.linearVelocity = direction * force;
+        knockbackTimer = knockbackDuration;
     }
 }

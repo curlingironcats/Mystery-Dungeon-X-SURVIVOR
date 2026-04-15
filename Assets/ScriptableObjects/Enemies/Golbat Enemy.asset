@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e244fcd666eba7d41b66c768446d1269, type: 3}
   m_Name: Golbat Enemy
   m_EditorClassIdentifier: Assembly-CSharp::EnemyScriptableObject
-  moveSpeed: 5
+  moveSpeed: 3.5
   maxHealth: 20
-  damage: 50
+  damage: 40
   clip: {fileID: 8300000, guid: 5595cc7170c97894185ece923519f7f7, type: 3}

@@ -3607,7 +3607,7 @@ MonoBehaviour:
   pauseScreen: {fileID: 1625047318}
   resultsScreen: {fileID: 1379994715}
   levelUpScreen: {fileID: 1561138626}
-  timeLimit: 75
+  timeLimit: 3000
   stopwatchDisplay: {fileID: 15038929}
   isGameOver: 0
   choosingUpgrade: 0
@@ -3783,6 +3783,7 @@ MonoBehaviour:
   lastVerticalVector: 0
   moveDir: {x: 0, y: 0}
   lastMovedVector: {x: 0, y: 0}
+  knockbackDuration: 0.15
 --- !u!114 &1521356218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3851,8 +3852,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.21623075}
-  m_Size: {x: 0.79387975, y: 1.0268908}
+  m_Offset: {x: 0, y: -0.23770833}
+  m_Size: {x: 0.79387975, y: 0.9839356}
   m_Direction: 0
 --- !u!114 &1521356221
 MonoBehaviour:
@@ -3875,7 +3876,8 @@ MonoBehaviour:
   experience: 0
   level: 1
   experienceCap: 100
-  invincibilityDuration: 0.5
+  invincibilityDuration: 0.8
+  knockbackForce: 8
   levelRanges:
   - startLevel: 1
     endLevel: 3
@@ -3888,8 +3890,11 @@ MonoBehaviour:
   healthBar: {fileID: 1815449255}
   expBar: {fileID: 1181049971}
   levelText: {fileID: 110095428}
+  Clip: {fileID: 8300000, guid: 1934899d1a4859f449d98d060b364842, type: 3}
   firstPassiveItemTest: {fileID: 0}
   secondPassiveItemTest: {fileID: 0}
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  damageFlashDuration: 0.2
 --- !u!114 &1521356222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6141,7 +6146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c68103de2b47b64b99982bdcccefbe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCollector
-  pullSpeed: 300
+  pullSpeed: 10
 --- !u!1 &2065631957
 GameObject:
   m_ObjectHideFlags: 0

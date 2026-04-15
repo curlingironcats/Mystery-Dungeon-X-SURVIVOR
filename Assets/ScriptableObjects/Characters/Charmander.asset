@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Charmander
   m_EditorClassIdentifier: Assembly-CSharp::CharacterScriptableObject
   startingWeapon: {fileID: 3101298889606502534, guid: a62518a29736f8f4192f4759e05a5505, type: 3}
-  maxHealth: 200
+  maxHealth: 100
   recovery: 1
   moveSpeed: 4.5
   might: 1
