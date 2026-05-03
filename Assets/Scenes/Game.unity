@@ -3326,7 +3326,7 @@ MonoBehaviour:
   - waveName: Wave 1
     enemyGroups:
     - enemyName: Zubat
-      enemyCount: 22
+      enemyCount: 50
       spawnCount: 0
       enemyPrefab: {fileID: 3730123878415526331, guid: 5d06190d43c58e4409a770e6683b3f4f, type: 3}
     waveQuota: 0
@@ -3335,20 +3335,20 @@ MonoBehaviour:
   - waveName: Wave 2
     enemyGroups:
     - enemyName: Zubat
-      enemyCount: 10
+      enemyCount: 50
       spawnCount: 0
       enemyPrefab: {fileID: 3730123878415526331, guid: 5d06190d43c58e4409a770e6683b3f4f, type: 3}
-    - enemyName: Red Zubat
-      enemyCount: 10
-      spawnCount: 0
-      enemyPrefab: {fileID: 3730123878415526331, guid: 95af84c84963eb346be060825c2ca5cc, type: 3}
     waveQuota: 0
     spawnInterval: 1
     spawnCount: 0
   - waveName: Wave 3
     enemyGroups:
-    - enemyName: Red Zubat
-      enemyCount: 20
+    - enemyName: Zubat
+      enemyCount: 30
+      spawnCount: 0
+      enemyPrefab: {fileID: 3730123878415526331, guid: 5d06190d43c58e4409a770e6683b3f4f, type: 3}
+    - enemyName: Golbat
+      enemyCount: 10
       spawnCount: 0
       enemyPrefab: {fileID: 3730123878415526331, guid: 95af84c84963eb346be060825c2ca5cc, type: 3}
     waveQuota: 0
@@ -3376,11 +3376,20 @@ MonoBehaviour:
     waveQuota: 0
     spawnInterval: 1
     spawnCount: 0
+  - waveName: Wave 6
+    enemyGroups:
+    - enemyName: Summoning Obelisk
+      enemyCount: 1
+      spawnCount: 0
+      enemyPrefab: {fileID: 3730123878415526331, guid: 3ce60971c72fbd84eae48903a29efe33, type: 3}
+    waveQuota: 0
+    spawnInterval: 1
+    spawnCount: 0
   currentWaveCount: 0
   enemiesAlive: 0
-  maxEnemiesAllowed: 10
+  maxEnemiesAllowed: 50
   maxEnemiesReached: 0
-  waveInterval: 3
+  waveInterval: 0
   relativeSpawnPoints:
   - {fileID: 2016246775}
   - {fileID: 233758714}
@@ -3394,6 +3403,9 @@ MonoBehaviour:
   - {fileID: 1773719284}
   - {fileID: 1206385277}
   - {fileID: 746297740}
+  bgmSource: {fileID: 838522346}
+  normalBGM: {fileID: 8300000, guid: d60a84dbcd9de5a469381bc19f013e59, type: 3}
+  finalWaveBGM: {fileID: 8300000, guid: c736883022a87f544adaf2a8c66ea4c2, type: 3}
 --- !u!4 &1334476465
 Transform:
   m_ObjectHideFlags: 0
@@ -6195,12 +6207,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 640, y: 480}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96

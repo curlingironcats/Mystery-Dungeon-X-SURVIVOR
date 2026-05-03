@@ -36,6 +36,10 @@ public class EnemySpawner : MonoBehaviour
     [Header("Spawn Positions")]
     public List<Transform> relativeSpawnPoints; // a list that stores all the relative spawn points of enemies
 
+    public AudioSource bgmSource;
+    public AudioClip normalBGM;
+    public AudioClip finalWaveBGM;
+
     Transform player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -48,33 +52,55 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentWaveCount < waves.Count && waves[currentWaveCount].spawnCount == 0 && !isWaveActive) // check if the wave has ended and the next wave should start
+        if (currentWaveCount >= waves.Count) return;
+
+        Wave currentWave = waves[currentWaveCount];
+
+        // Only spawn while this wave still has enemies left to spawn
+        if (currentWave.spawnCount < currentWave.waveQuota)
         {
-            StartCoroutine(BeginNextWave());
+            spawnTimer += Time.deltaTime;
+
+            if (spawnTimer >= currentWave.spawnInterval)
+            {
+                spawnTimer = 0f;
+                SpawnEnemies();
+            }
         }
 
-        spawnTimer += Time.deltaTime;
-        
-        // check if its time to spawn the next wave
-        if(spawnTimer >= waves[currentWaveCount].spawnInterval)
+        // Only begin next wave after:
+        // 1. all enemies for this wave have spawned
+        // 2. all enemies from this wave are dead
+        // 3. we are not already waiting for the next wave
+        if (
+            currentWave.spawnCount >= currentWave.waveQuota &&
+            enemiesAlive <= 0 &&
+            !isWaveActive
+        )
         {
-            spawnTimer = 0f;
-            SpawnEnemies();
+            StartCoroutine(BeginNextWave());
         }
     }
 
     IEnumerator BeginNextWave()
     {
-        isWaveActive = true; 
-        // wait for waveinterval seconds before starting the next wave
+        isWaveActive = true;
+
         yield return new WaitForSeconds(waveInterval);
 
-        // if there ar emore waves to start after the current wave, move to the next wave
-        if(currentWaveCount < waves.Count - 1)
+        if (currentWaveCount < waves.Count - 1)
         {
-            isWaveActive = false;
             currentWaveCount++;
             CalculateWaveQuota();
+            spawnTimer = 0f;
+            isWaveActive = false;
+
+            // If this is the LAST wave
+            if (currentWaveCount == waves.Count - 1)
+            {
+                bgmSource.clip = finalWaveBGM;
+                bgmSource.Play();
+            }
         }
     }
 
