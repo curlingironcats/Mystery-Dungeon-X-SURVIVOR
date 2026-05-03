@@ -1,0 +1,602 @@
+fileFormatVersion: 2
+guid: 5c0d933eb72234a4f8212ed01f2e4e38
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1300916847036093252
+    second: Moltres_0
+  - first:
+      213: -7878925159435216321
+    second: Moltres_1
+  - first:
+      213: -8942434915987909052
+    second: Moltres_2
+  - first:
+      213: -1787876359775292807
+    second: Moltres_3
+  - first:
+      213: 5779901233853039580
+    second: Moltres_4
+  - first:
+      213: 4361601889817577560
+    second: Moltres_5
+  - first:
+      213: -2783523604721973765
+    second: Moltres_6
+  - first:
+      213: -1625410473896314149
+    second: Moltres_7
+  - first:
+      213: -4724386293625645678
+    second: Moltres_8
+  - first:
+      213: -9044044482686728429
+    second: Moltres_9
+  - first:
+      213: 5533078623078718971
+    second: Moltres_10
+  - first:
+      213: -5323195496338852588
+    second: Moltres_11
+  - first:
+      213: 6538973494054196412
+    second: Moltres_12
+  - first:
+      213: 569802290831145428
+    second: Moltres_13
+  - first:
+      213: 3258508431408974697
+    second: Moltres_14
+  - first:
+      213: 7075764881666779134
+    second: Moltres_15
+  - first:
+      213: 1878512776743588235
+    second: Moltres_16
+  - first:
+      213: -1143270417975775684
+    second: Moltres_17
+  - first:
+      213: -7296119257950803385
+    second: Moltres_18
+  - first:
+      213: 2445523876924520984
+    second: Moltres_19
+  - first:
+      213: -1923017616614244062
+    second: Moltres_20
+  - first:
+      213: 346309627817419808
+    second: Moltres_21
+  - first:
+      213: 6076210149909524233
+    second: Moltres_22
+  - first:
+      213: -2772596012455061218
+    second: Moltres_23
+  - first:
+      213: 6931982757920197596
+    second: Moltres_24
+  - first:
+      213: 4242974068303126576
+    second: Moltres_25
+  - first:
+      213: 3527756954640319301
+    second: Moltres_26
+  - first:
+      213: 2561051528223940108
+    second: Moltres_27
+  - first:
+      213: 6716460638792323354
+    second: Moltres_28
+  - first:
+      213: 1642304876381791879
+    second: Moltres_29
+  - first:
+      213: 5239170011286670214
+    second: Moltres_30
+  - first:
+      213: -1484927576482937395
+    second: Moltres_31
+  - first:
+      213: 3822339447532206580
+    second: Moltres_32
+  - first:
+      213: 317878148081867105
+    second: Moltres_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 26.5
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Moltres_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbca71a250732fde0800000000000000
+      internalID: -1300916847036093252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moltres_1
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 288
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3ad9f3df4f68a290800000000000000
+      internalID: -7878925159435216321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moltres_2
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 288
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4469d7da2d616e380800000000000000
+      internalID: -8942434915987909052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moltres_3
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 288
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97276416cef2037e0800000000000000
+      internalID: -1787876359775292807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moltres_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd307a88c85563050800000000000000
+      internalID: 5779901233853039580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moltres_5
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 192
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 858cf3e5fc5878c30800000000000000
+      internalID: 4361601889817577560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moltres_6
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 192
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf5c1ac7700fe59d0800000000000000
+      internalID: -2783523604721973765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moltres_7
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 192
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdaf53929c16179e0800000000000000
+      internalID: -1625410473896314149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moltres_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29518b262bb9f6eb0800000000000000
+      internalID: -4724386293625645678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moltres_9
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 96
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31740acd5791d7280800000000000000
+      internalID: -9044044482686728429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moltres_10
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 96
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfd1ae231b179cc40800000000000000
+      internalID: 5533078623078718971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moltres_11
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 96
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41573ca46e53026b0800000000000000
+      internalID: -5323195496338852588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moltres_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb49bc47fb91fba50800000000000000
+      internalID: 6538973494054196412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moltres_13
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 0
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d9b1312a2858e700800000000000000
+      internalID: 569802290831145428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moltres_14
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96b4fbf672c883d20800000000000000
+      internalID: 3258508431408974697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moltres_15
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 0
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef7aeedbbaa223260800000000000000
+      internalID: 7075764881666779134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: de72f3ea147121745bd4c006b2fdfcbe
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":90.0,"y":96.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Moltres_0: -1300916847036093252
+      Moltres_1: -7878925159435216321
+      Moltres_10: 5533078623078718971
+      Moltres_11: -5323195496338852588
+      Moltres_12: 6538973494054196412
+      Moltres_13: 569802290831145428
+      Moltres_14: 3258508431408974697
+      Moltres_15: 7075764881666779134
+      Moltres_2: -8942434915987909052
+      Moltres_3: -1787876359775292807
+      Moltres_4: 5779901233853039580
+      Moltres_5: 4361601889817577560
+      Moltres_6: -2783523604721973765
+      Moltres_7: -1625410473896314149
+      Moltres_8: -4724386293625645678
+      Moltres_9: -9044044482686728429
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

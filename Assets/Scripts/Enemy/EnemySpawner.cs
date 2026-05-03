@@ -28,6 +28,7 @@ public class EnemySpawner : MonoBehaviour
     [Header("Spawner Attributes")]
     float spawnTimer; //timer used to determine when to spawn the next enemy
     public int enemiesAlive; // track the amount of enemies on the field
+    public int enemiesKilled; // track number of enemies defeated
     public int maxEnemiesAllowed; // max number of enemies allowed on the map at once
     public bool maxEnemiesReached = false; // a flag indicating if the max number of enemies has been reached
     public float waveInterval; // the interval between each wave
@@ -102,6 +103,13 @@ public class EnemySpawner : MonoBehaviour
                 bgmSource.Play();
             }
         }
+            if (currentWaveCount == waves.Count - 1 && enemiesKilled == 221)
+            {
+                if(!GameManager.instance.isGameOver)
+                {
+                    GameManager.instance.GameOver();
+                }
+            }
     }
 
     void CalculateWaveQuota()
@@ -160,5 +168,6 @@ public class EnemySpawner : MonoBehaviour
     {
         // decrement number of enemies alive
         enemiesAlive--;
+        enemiesKilled++;
     }
 }
